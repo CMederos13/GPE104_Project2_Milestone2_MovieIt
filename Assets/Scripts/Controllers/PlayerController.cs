@@ -36,89 +36,93 @@ public class PlayerController : Controller
 
     public override void MakeDecisions()
     {
-        if (Input.GetKey(TurboSpeedL) || Input.GetKey(TurboSpeedR))
+        if (pawn != null)
         {
-            //Faster Version method are used here 
+            if (Input.GetKey(TurboSpeedL) || Input.GetKey(TurboSpeedR))
+            {
+                //Faster Version method are used here 
 
-            if (Input.GetKey(MoveForwardLocal))
+                if (Input.GetKey(MoveForwardLocal))
+                {
+                    //
+                    pawn.MoveForwardLocalTurbo();
+                }
+                if (Input.GetKey(MoveBackwardLocal))
+                {
+                    //
+                    pawn.MoveBackwardLocalTurbo();
+                }
+                if (Input.GetKey(RotateCounterClock))
+                {
+                    //
+                    pawn.RotateCounterClockTurbo();
+                }
+                if (Input.GetKey(RotateClockwise))
+                {
+                    //
+                    pawn.RotateClockTurbo();
+                }
+            }
+
+            else
+            {
+                //Normal Version method used here
+                if (Input.GetKey(MoveForwardLocal))
+                {
+                    //Foward
+                    pawn.MoveForwardLocal();
+                }
+                if (Input.GetKey(MoveBackwardLocal))
+                {
+                    //Backward
+                    pawn.MoveBackwardLocal();
+                }
+                if (Input.GetKey(RotateClockwise))
+                {
+                    //Clockwise
+                    pawn.RotateClockwise();
+                }
+                if (Input.GetKey(RotateCounterClock))
+                {
+                    //CounterClockwise
+                    pawn.RotateCounterClock();
+
+                }
+
+            }
+
+
+            //World Space Key Presses 
+
+            if (Input.GetKeyDown(MoveForwardWorld))
             {
                 //
-                pawn.MoveForwardLocalTurbo();
+                pawn.MoveForwardWorld();
             }
-            if (Input.GetKey(MoveBackwardLocal))
+            if (Input.GetKeyDown(MoveBackwardWorld))
             {
                 //
-                pawn.MoveBackwardLocalTurbo();
+                pawn.MoveBackwardWorld();
             }
-            if (Input.GetKey(RotateCounterClock))
+            if (Input.GetKeyDown(MoveRightWorld))
             {
                 //
-                pawn.RotateCounterClockTurbo();
+                pawn.MoveRightWorld();
             }
-            if (Input.GetKey(RotateClockwise))
+            if (Input.GetKeyDown(MoveLeftWorld))
             {
                 //
-                pawn.RotateClockTurbo();
+                pawn.MoveLeftWorld();
             }
-        }
 
-        else
-        {
-            //Normal Version method used here
-            if (Input.GetKey(MoveForwardLocal))
+            //Teleport Key Pressed
+            if (Input.GetKeyDown(TeleportKey))
             {
-                //Foward
-                pawn.MoveForwardLocal();
+                pawn.Teleport();
             }
-            if (Input.GetKey(MoveBackwardLocal))
-            {
-                //Backward
-                pawn.MoveBackwardLocal();
-            }
-            if (Input.GetKey(RotateClockwise))
-            {
-                //Clockwise
-                pawn.RotateClockwise();
-            }
-            if (Input.GetKey(RotateCounterClock))
-            {
-                //CounterClockwise
-                pawn.RotateCounterClock();
-
-            }
-
-        }
-
-
-        //World Space Key Presses 
-
-        if (Input.GetKeyDown(MoveForwardWorld))
-        {
-            //
-            pawn.MoveForwardWorld();
-        }
-        if (Input.GetKeyDown(MoveBackwardWorld))
-        {
-            //
-            pawn.MoveBackwardWorld();
-        }
-        if (Input.GetKeyDown(MoveRightWorld))
-        {
-            //
-            pawn.MoveRightWorld();
-        }
-        if (Input.GetKeyDown(MoveLeftWorld))
-        {
-            //
-            pawn.MoveLeftWorld();
-        }
-
-        //Teleport Key Pressed
-        if (Input.GetKeyDown(TeleportKey))
-        {
-            pawn.Teleport();
         }
     }
+       
         
     
 
