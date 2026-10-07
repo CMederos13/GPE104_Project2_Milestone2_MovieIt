@@ -1,4 +1,4 @@
-//PE104 — Project 2 Milestone 2-3 : "Move it trooper" and "One Trigger Death Punch"
+//PE104 — Project 2 Milestone 2-4 : "Move it trooper", "One Trigger Death Punch", "Fire At Will!"
 
 //Student: Christian Mederos
 
@@ -13,6 +13,8 @@
 [https://www.youtube.com/watch?v=VSZey6Jl8wk&list=PLRXBFbkh1jDU&index=2](https://www.youtube.com/watch?v=VSZey6Jl8wk&list=PLRXBFbkh1jDU&index=2)
 **Milestone 3**
 [https://www.youtube.com/watch?v=Q7bAMDblCMA](https://www.youtube.com/watch?v=Q7bAMDblCMA)
+**Milestone 4**
+[https://youtu.be/U3e0GLe3cow](https://youtu.be/U3e0GLe3cow)
 
                                                                             ** Overview **
 
@@ -27,10 +29,20 @@
 
 // 5. Milestone 2 Completed and Submitted 
 
-// 6. Started on Milestone 3
+// 6. Milestone 3 Completed and Submitted 
+
+// 7. Milestone 4 Completed and Submitted 
 
 // 7. Completed Damage and Health scripts 
 
-// 8. Completed Milestone 3 and Submitted 
+// 8. Started Milestone 3- Created a Singleton GameManager
+
+// 9. Created a shooting Component to the Sprite.
+
+// 10. Created a Prefab of Asteroids and bullets- also finished Adding collision and damage to the objects prefabs
+
+// 11. Tydying up any bugs in the system
+
+// 12. Completed Milestone 3 and Submitted 
 
 // Commit history **All commits with be in the commits section
