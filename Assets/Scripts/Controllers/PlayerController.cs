@@ -1,4 +1,5 @@
-    using UnityEngine;
+using System.Threading.Tasks;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : Controller
@@ -30,9 +31,14 @@ public class PlayerController : Controller
 
     //Left Shift Button
     public KeyCode TurboSpeedL;
+    
     //Right Shift Button
 
     public KeyCode TurboSpeedR;
+
+    // Shoot Mechanics 
+    public KeyCode shootKey;
+
 
     public override void MakeDecisions()
     {
@@ -120,6 +126,13 @@ public class PlayerController : Controller
             {
                 pawn.Teleport();
             }
+
+            //Shoot key press 
+            if (Input.GetKeyDown(shootKey))
+            {
+                //telling pawn to shoot
+                pawn.Shoot();
+            }
         }
     }
        
@@ -128,7 +141,10 @@ public class PlayerController : Controller
 
     public override void Start()
     {
-        
+        if (GameManager.instance != null)
+        {
+            GameManager.instance.playerController = this;
+        }
     }
 
     public override void Update()

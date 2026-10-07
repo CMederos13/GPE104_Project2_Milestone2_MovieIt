@@ -17,10 +17,9 @@ public class StarShipPawn : Pawn
 
     public float normalRotateSpeed;
     public float turboRotateSpeed;
-    public override void MakeDecsisions()
-    {
-        throw new System.NotImplementedException();
-    }
+
+    private Shooter sh;
+    
 
     public override void MoveForwardLocal()
     {
@@ -82,21 +81,38 @@ public class StarShipPawn : Pawn
         tf.position = tf.position + tf.up * -turboSpeed * Time.deltaTime;
     }
 
-    
+
+
+    public override void MakeDecsisions()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void Shoot()
+    {
+        // telling our shooter component to shoot
+        if (sh != null)
+        {
+            sh.Shoot();
+        }
+
+    }
     public override void Teleport()
     {
         tf.position = new Vector3(Random.Range(minX,maxX), Random.Range(minY, maxY));
     }
-    
-   
 
+    
     public override void Start()
     {
         tf = GetComponent<Transform>();
+        sh = GetComponent<Shooter>();
     }
 
     public override void Update()
     {
 
     }
+
+
 }
