@@ -15,6 +15,8 @@
 [https://www.youtube.com/watch?v=Q7bAMDblCMA](https://www.youtube.com/watch?v=Q7bAMDblCMA)
 **Milestone 4**
 [https://youtu.be/U3e0GLe3cow](https://youtu.be/U3e0GLe3cow)
+**Milestone 5** 
+[Youtube coming soon]()
 
                                                                             ** Overview **
 
@@ -44,5 +46,11 @@
 // 11. Tydying up any bugs in the system
 
 // 12. Completed Milestone 3 and Submitted 
+
+// 13. Started Milestone 4 working on UI System, Background UI , Highscore UI, and working on a damageghost number
+
+// 14. Completed Script 
+
+// 14. Working on Youtube video for milestone 5
 
 // Commit history **All commits with be in the commits section
