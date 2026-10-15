@@ -8,6 +8,13 @@ public class Obstacle : MonoBehaviour
         GameManager.instance.obstacleList.Add(this);
                
     }
+    void OnDestroy()
+    {
+        if (GameManager.instance != null)
+        {
+            GameManager.instance.obstacleList.Remove(this);
+        }
+    }
 
     // Update is called once per frame
     void Update()

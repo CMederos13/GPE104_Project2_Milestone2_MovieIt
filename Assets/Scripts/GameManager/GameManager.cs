@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 
@@ -8,6 +9,10 @@ public class GameManager : MonoBehaviour
 
     public PlayerController playerController;
     public List<Obstacle> obstacleList;
+
+    public int score;
+
+    public TMP_Text text;
     
 
     
@@ -55,5 +60,10 @@ public class GameManager : MonoBehaviour
 
         }
 
+        if (text != null)
+        {
+            text.text = "" + score;
+        }
+            
     }
 }

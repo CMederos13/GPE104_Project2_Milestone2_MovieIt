@@ -1,4 +1,6 @@
+using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -7,11 +9,22 @@ public class Health : MonoBehaviour
 
     private Death death;
 
+    public Image healthBar;
+
+    public GameObject damageNumberPrefab;
+
+    public Transform damageNumberParent; 
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        death = GetComponent<Death>();
+
+        if(healthBar != null)
+        {
+            healthBar.fillAmount = currentHealth / maxHealth;
+        }
     }
 
     // Update is called once per frame
@@ -21,17 +34,68 @@ public class Health : MonoBehaviour
     }
     public void TakeDamage(float damageAmount)
     {
+        //If I'm already dead,Ignore any more damage
+        //This ends the method right there and skips everything below it; ex. a dead asteroid hit by a second bullet in the same frame
+        if (currentHealth <= 0)
+        {
+            return;
+        }
+    
         // subtract damage from my current health
 
         currentHealth -= damageAmount;
 
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        // if current health is less then zero
+
+        //shows the floating damage number
+        
+        SpawnDamageNumber(damageAmount);
+
+        //healthBar
+        if (healthBar != null)
+        {
+            healthBar.fillAmount = currentHealth / maxHealth;
+        }
+        //Death 
         if (currentHealth <= 0)
         {
-            // tell this pawn die
-            GetComponent<Death>().Die();
-               // death.Die();
+            if (death != null)
+            {
+                death.Die();
+            }
+
+        }
+        
+    }
+    private void SpawnDamageNumber(float amount)
+    {
+
+        Debug.Log("SpawnDamageNumber called on " + gameObject.name + ", prefab = " + damageNumberPrefab);
+        if (damageNumberPrefab == null)
+        {
+            return;
+        }
+
+        GameObject newNumber; 
+        if (damageNumberParent != null)
+        {
+            // spawns inside the HUD Health Bar, Position by the anchor
+            newNumber = Instantiate(damageNumberPrefab, damageNumberParent);
+        }
+        else
+        {
+            // spawns at the object's position, a little above it
+            newNumber = Instantiate(damageNumberPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
+        }
+
+        //had to look this up in the unity manual along with reddit
+        // also used lecture 6.2 
+        // Takes the new number how much damage to display 
+
+        DamageGhostNumbers numberscript = newNumber.GetComponent<DamageGhostNumbers>();
+        if(numberscript != null)
+        {
+            numberscript.SetDamage(amount);
         }
     }
     public void Heal(float healAmount)
@@ -49,13 +113,19 @@ public class Health : MonoBehaviour
         // setting the max health for healing 
         
         currentHealth = Mathf.Clamp(currentHealth, 0 , maxHealth);
-       
-        
+
+
         // if health > max then set health to max
-       //if (currentHealth > maxHealth)
-       // {
-         //   currentHealth = maxHealth;
+        //if (currentHealth > maxHealth)
+        // {
+        //   currentHealth = maxHealth;
         //}
+        if (healthBar != null)
+        {
+            healthBar.fillAmount = currentHealth / maxHealth;
+        }
+
+       
     }
 
    
@@ -67,11 +137,11 @@ public class Health : MonoBehaviour
 
 
 //TO DO LIST 
-//  TODO: substract dammage from current health of pawn
-//  TODO: if my current health is less then zero = death
-//  TODO: tell this pawn to die 
-//  TODO: Check for dodge
-//  TODO: Check for immunity 
+//  TODO: Create Ghost health script 
+//  TODO: Finish Video for milestone 4
+//  TODO: Write sound script 
+//  TODO: 
+//  TODO:  
 //  TODO: 
 //  TODO: 
 //  TODO: 

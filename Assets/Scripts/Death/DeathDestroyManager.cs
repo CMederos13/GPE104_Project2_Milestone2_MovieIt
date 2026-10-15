@@ -3,6 +3,7 @@ using UnityEngine;
 public class DeathDestroyManager : Death
 
 {
+    public int scoreValue;
     private Obstacle ObstacleToRemoveOnDeath;
 
     public override void Die()
@@ -13,7 +14,11 @@ public class DeathDestroyManager : Death
             {
                 GameManager.instance.obstacleList.Remove(ObstacleToRemoveOnDeath);
             }
+
+            GameManager.instance.score += scoreValue;
+        
         }
+
         Destroy(gameObject);
     }
 
