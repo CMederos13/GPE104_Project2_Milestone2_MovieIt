@@ -1,4 +1,4 @@
-//PE104 — Project 2 Milestone 2-4 : "Move it trooper", "One Trigger Death Punch", "Fire At Will!"
+//PE104 — Project 2 Milestone 2-5 : "Move it trooper", "One Trigger Death Punch", "Fire At Will!", "Heads Up"
 
 //Student: Christian Mederos
 
@@ -16,7 +16,7 @@
 **Milestone 4**
 [https://youtu.be/U3e0GLe3cow](https://youtu.be/U3e0GLe3cow)
 **Milestone 5** 
-[Youtube coming soon]()
+[https://youtu.be/9hViJV_iRes](https://youtu.be/9hViJV_iRes)
 
                                                                             ** Overview **
 
@@ -52,5 +52,7 @@
 // 14. Completed Script 
 
 // 14. Working on Youtube video for milestone 5
+
+// 15. Uploaded Completed Milestone 5
 
 // Commit history **All commits with be in the commits section
