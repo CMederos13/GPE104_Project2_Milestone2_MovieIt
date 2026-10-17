@@ -1,4 +1,4 @@
-//PE104 — Project 2 Milestone 2-5 : "Move it trooper", "One Trigger Death Punch", "Fire At Will!", "Heads Up"
+//PE104 — Project 2 Milestone 2-6 : "Move it trooper", "One Trigger Death Punch", "Fire At Will!", "Heads Up", "The Sound and Fury"
 
 //Student: Christian Mederos
 
@@ -17,6 +17,8 @@
 [https://youtu.be/U3e0GLe3cow](https://youtu.be/U3e0GLe3cow)
 **Milestone 5** 
 [https://youtu.be/9hViJV_iRes](https://youtu.be/9hViJV_iRes)
+**Milestone 6** 
+[Youtube Video Soon]()
 
                                                                             ** Overview **
 
@@ -55,7 +57,34 @@
 
 // 15. Uploaded Completed Milestone 5
 
+// 16. Milestone 6 Started
 
+// 17. Sound effects added (2D): Shooting and taking damage play sounds through a dedicated Audio Source using PlayOneShot()
+
+// 18.  Asteroid Hum added (3D): Each Asteroid has a looping 3D Audio Source that gets louder as the player gets closer, as required.
+
+// 19. Background music: Created a loop through a dedicated Music Audio Source
+
+// 20. GameOver SFX added: Plays when the player dies, also pauses Background Music so its easier to hear
+
+// 21. Clips on GameManager: All audio clips were exposed on GameManager so designers can swap them in Inspector
+
+// 22.  Audio Mixer Created: Master, SFX, and Music volume mixers were created with exposed volume parameter as required.
+
+// 23. Setting Menu Added: Main, SFX, and Music Volume sliders added; slider values were converted to decibels with 'Log10(value) * 20'
+
+// 24. PlayerPref created: Volume setting are saved and loaded even after closing the Game 
+
+// 25. **Extra Features** 
+Added a Pause Menu: Hitting escape now opens and closes the setting menu and pauses the game using 'Time.timeScale'
+Added a Quit Game Button: Move the quit game script function into the setting's menu 
+
+
+// **Credits**
+SFX Created with JSFXR: https://pro.sfxr.me
+Background Music:
+"Destiny Day" by Kevin Macleod Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
 
 // **Image:** <img width="4284" height="5712" alt="IMG_3012" src="https://github.com/user-attachments/assets/17f591f6-e84b-40a7-ba51-f65364127d9b" />
 
