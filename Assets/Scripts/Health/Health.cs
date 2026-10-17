@@ -47,6 +47,9 @@ public class Health : MonoBehaviour
 
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
+        // Plays the damage sound through the GameManager's SFX Player
+        GameManager.instance.sfxPlayer.PlayOneShot(GameManager.instance.takingDamageSound);
+
         //shows the floating damage number
         
         SpawnDamageNumber(damageAmount);

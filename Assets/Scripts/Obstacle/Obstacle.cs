@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Obstacle : MonoBehaviour
 {
@@ -6,7 +7,14 @@ public class Obstacle : MonoBehaviour
     void Start()
     {
         GameManager.instance.obstacleList.Add(this);
-               
+
+        //Get this Asteroid's Audio Source and start It's 3D Hum
+        AudioSource humSource = GetComponent<AudioSource>();
+        if(humSource != null)
+        {
+            humSource.clip = GameManager.instance.asteroidHumSound;
+            humSource.Play();
+        }
     }
     void OnDestroy()
     {

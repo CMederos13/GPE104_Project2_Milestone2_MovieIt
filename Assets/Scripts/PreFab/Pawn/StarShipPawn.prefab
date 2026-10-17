@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 9205953705481746323}
   - component: {fileID: 1168476030766954650}
   - component: {fileID: -1465348504600565557}
+  - component: {fileID: 472989505192468494}
   m_Layer: 0
   m_Name: StarShipPawn
   m_TagString: Untagged
@@ -166,6 +167,8 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 100
   healthBar: {fileID: 0}
+  damageNumberPrefab: {fileID: 3729499395448092245, guid: 23dd7751a33089043a7576e3c3558288, type: 3}
+  damageNumberParent: {fileID: 0}
 --- !u!60 &9205953705481746323
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -360,3 +363,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f113294df06bf8445bb319e2766b8b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeathPawn
+--- !u!81 &472989505192468494
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7567064362659971391}
+  m_Enabled: 1
