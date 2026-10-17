@@ -18,7 +18,7 @@
 **Milestone 5** 
 [https://youtu.be/9hViJV_iRes](https://youtu.be/9hViJV_iRes)
 **Milestone 6** 
-[Youtube Video Soon]()
+[https://youtu.be/S7ujrqDcyJY](https://youtu.be/S7ujrqDcyJY)
 
                                                                             ** Overview **
 
