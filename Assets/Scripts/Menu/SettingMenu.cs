@@ -17,10 +17,7 @@ public class SettingMenu : MonoBehaviour
     public GameObject settingPanel;
     void Start()
     {
-        Debug.Log("LOADED -> Main: " + PlayerPrefs.GetFloat("MainVolume", 1f)
-           + "  SFX: " + PlayerPrefs.GetFloat("SFXVolume", 1f)
-           + "  Music: " + PlayerPrefs.GetFloat("MusicVolume", 1f));
-
+       
         // Loads Saved Slider Values (Default to 1 = Max Volume if nothing saved
         mainVolumeSlider.value = PlayerPrefs.GetFloat("MainVolume", 1f);
         sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1f);
@@ -60,10 +57,6 @@ public class SettingMenu : MonoBehaviour
     }
     private void OnApplicationQuit()
     {
-        Debug.Log("SAVING -> Main: " + mainVolumeSlider.value
-           + "  SFX: " + sfxVolumeSlider.value
-           + "  Music: " + musicVolumeSlider.value);
-
         PlayerPrefs.Save();
     }
     public void OnMusicVolumeChange()

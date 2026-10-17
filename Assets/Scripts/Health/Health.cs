@@ -73,7 +73,7 @@ public class Health : MonoBehaviour
     private void SpawnDamageNumber(float amount)
     {
 
-        Debug.Log("SpawnDamageNumber called on " + gameObject.name + ", prefab = " + damageNumberPrefab);
+       
         if (damageNumberPrefab == null)
         {
             return;
