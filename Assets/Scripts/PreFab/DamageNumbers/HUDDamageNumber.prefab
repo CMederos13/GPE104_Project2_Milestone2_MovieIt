@@ -152,6 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c41e1260d6efe14fb241ac546fa89ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageGhostNumbers
-  damageText: {fileID: 0}
+  damageText: {fileID: 6181662191488916436}
   floatSpeed: 1
   lifespan: 1

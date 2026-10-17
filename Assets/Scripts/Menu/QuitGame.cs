@@ -1,20 +1,17 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+
 
 public class QuitGame : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    //Callied by Quit Button's Click Event
+   public void Quit()
     {
+        Debug.Log("QuittingGame");
+        Application.Quit();
 
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Keyboard.current[Key.Escape].wasPressedThisFrame)
-        {
-            Application.Quit();
-        }
-    }
 }
