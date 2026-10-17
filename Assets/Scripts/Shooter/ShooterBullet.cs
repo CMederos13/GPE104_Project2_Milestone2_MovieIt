@@ -13,6 +13,10 @@ public class ShooterBullet : Shooter
         {
             
             Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
+
+            // Plays the gun sound through the GameManager's SFX player
+
+            GameManager.instance.sfxPlayer.PlayOneShot(GameManager.instance.fireGunSound);
         }
     }
     

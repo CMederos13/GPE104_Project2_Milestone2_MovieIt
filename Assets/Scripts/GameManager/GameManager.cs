@@ -13,8 +13,24 @@ public class GameManager : MonoBehaviour
     public int score;
 
     public TMP_Text text;
-    
 
+    public AudioClip fireGunSound;
+
+    public AudioClip teleportSound;
+
+    public AudioClip gameOverSound;
+
+    public AudioClip backgroundMusic;
+
+    public AudioClip takingDamageSound;
+
+    public AudioClip asteroidHumSound;
+
+    public AudioSource sfxPlayer;
+
+    public AudioSource musicPlayer;
+    
+        
     
     public void Awake()
     {
@@ -33,9 +49,10 @@ public class GameManager : MonoBehaviour
 
     }
     
-    void Star()
+    void Start()
     {
-
+        musicPlayer.clip = backgroundMusic;
+        musicPlayer.Play(); 
     }
     void Update()
     {

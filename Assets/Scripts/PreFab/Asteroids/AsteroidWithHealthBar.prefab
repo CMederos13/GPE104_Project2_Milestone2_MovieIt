@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 2395452689832468031}
   - component: {fileID: 8543889323126769264}
   m_Layer: 0
-  m_Name: AsteroidWithHealthBar 1
+  m_Name: AsteroidWithHealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -414,7 +414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec72dcdd7d5a798448e49efb30b62700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeathDestroyManager
-  scoreValue: 15
+  scoreValue: 10
 --- !u!114 &8543889323126769264
 MonoBehaviour:
   m_ObjectHideFlags: 0
