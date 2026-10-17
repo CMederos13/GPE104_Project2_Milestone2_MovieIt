@@ -1,4 +1,4 @@
-//PE104 — Project 2 Milestone 2-4 : "Move it trooper", "One Trigger Death Punch", "Fire At Will!"
+//PE104 — Project 2 Milestone 2-5 : "Move it trooper", "One Trigger Death Punch", "Fire At Will!", "Heads Up"
 
 //Student: Christian Mederos
 
@@ -15,6 +15,8 @@
 [https://www.youtube.com/watch?v=Q7bAMDblCMA](https://www.youtube.com/watch?v=Q7bAMDblCMA)
 **Milestone 4**
 [https://youtu.be/U3e0GLe3cow](https://youtu.be/U3e0GLe3cow)
+**Milestone 5** 
+[https://youtu.be/9hViJV_iRes](https://youtu.be/9hViJV_iRes)
 
                                                                             ** Overview **
 
@@ -44,5 +46,17 @@
 // 11. Tydying up any bugs in the system
 
 // 12. Completed Milestone 3 and Submitted 
+
+// 13. Started Milestone 4 working on UI System, Background UI , Highscore UI, and working on a damageghost number
+
+// 14. Completed Script 
+
+// 14. Working on Youtube video for milestone 5
+
+// 15. Uploaded Completed Milestone 5
+
+
+
+// **Image:** <img width="4284" height="5712" alt="IMG_3012" src="https://github.com/user-attachments/assets/17f591f6-e84b-40a7-ba51-f65364127d9b" />
 
 // Commit history **All commits with be in the commits section
