@@ -1,11 +1,23 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+
+    [Header("Player Lives")]
+    public GameObject playerShipPreFab; //StarShipPawn prefab, spawn at the world origin
+    public int startingLives = 3; // Designers can set the amount of lives the player gets
+    private int currentLives;
+    public TMP_Text livesText; // Shows lives left in the UI 
+
+    [Header("Player Health UI")]
+    public Image playerHealthBar; // Health Bar fill image the ship updates
+    public Transform playerDamageNumberParent; // Where the ghost damage numbers pop up
+
     [Header("Gameplay")]
     public PlayerController playerController;
     public List<Obstacle> obstacleList;
@@ -26,6 +38,8 @@ public class GameManager : MonoBehaviour
     public AudioClip takingDamageSound;
 
     public AudioClip asteroidHumSound;
+
+    public AudioClip deathSound; //Explosionn when the ship or an enemy is destroyed
 
     [Header("Audio Sources")]
     public AudioSource sfxPlayer;
@@ -77,12 +91,13 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        //checking for wiin/lose while game is running
+        
+        //checking for win/lose while game is running
         if (isGameRunning)
         {
             if (playerController != null && playerController.pawn == null)
             {
-                DoShowGameOver();
+                PlayerDied();
             }
             else if (obstacleList.Count <= 0)
             {
@@ -95,6 +110,49 @@ public class GameManager : MonoBehaviour
         {
             text.text = "" + score;
         }
+        if (livesText != null)
+        {
+            livesText.text = "Lives: " + currentLives; 
+        }
+    }
+
+    private void PlayerDied()
+    {
+        currentLives = currentLives - 1;
+
+        if (currentLives > 0)
+        {
+            SpawnPlayer();
+        }
+        else
+        {
+            //Last Life Lost: Stops music so Game Over sound is Heard
+            musicPlayer.Stop();
+            sfxPlayer.PlayOneShot(gameOverSound);
+            DoShowGameOver();
+        }
+    }
+    //Creates a new ship at the world origin and connects it to the Controller and Health UI
+    private void SpawnPlayer()
+    {
+        // Removes the old ship if one is still in the scene 
+        if (playerController.pawn != null)
+        {
+            Destroy(playerController.pawn.gameObject);
+        }
+        GameObject newShip = Instantiate(playerShipPreFab, Vector3.zero, Quaternion.identity, gameplay.transform);
+
+        // Hands over the new ship to the player controller
+        playerController.pawn = newShip.GetComponent<Pawn>();
+
+        //Connect the new ship's health to the health bar UI
+        Health shipHealth = newShip.GetComponent<Health>();
+        shipHealth.healthBar = playerHealthBar;
+        shipHealth.damageNumberParent = playerDamageNumberParent;
+
+        // The new ship's audio listener takes over from the camera 
+        cameraListener.enabled = false;
+
     }
 
     //Turns screen and gameplay off, this on what it needs when the bottons clicked
@@ -111,6 +169,12 @@ public class GameManager : MonoBehaviour
     }
     public void DoShowMainMenu()
     {
+        //Restarts Music if game over stopped it
+        if (!musicPlayer.isPlaying)
+        {
+            musicPlayer.Play();
+        }
+
         HideAllScreens();
         mainMenuScreen.SetActive(true);
         cameraListener.enabled = true;
@@ -134,8 +198,16 @@ public class GameManager : MonoBehaviour
         HideAllScreens();
         gameplay.SetActive(true);
         gameplayUI.SetActive(true);
-        cameraListener.enabled = false; //Ship's listener taking over
+        
+        if (!musicPlayer.isPlaying)
+        {
+            musicPlayer.Play();
+        }
+        //Reset Run: Score 0, full lives, new ship at the origin
+       
         score = 0;
+        currentLives = startingLives;
+        SpawnPlayer();
         Time.timeScale = 1;
         isGameRunning = true;
     }

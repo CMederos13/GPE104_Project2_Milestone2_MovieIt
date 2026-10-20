@@ -1,11 +1,12 @@
-using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.InputSystem;
+
 
 public class PlayerController : Controller
 {
+    [Header("Teleport Controls")]
     public KeyCode TeleportKey;
-   
+
+    [Header("Local Movement (Ship-Facing)")]
     //[W] Key For moving Foward 
     public KeyCode MoveForwardLocal;
     //[S] key For moving Backward
@@ -15,8 +16,9 @@ public class PlayerController : Controller
     //[A] Key For Rotating Counter-Clockwise
     public KeyCode RotateCounterClock;
 
+   
+    [Header("World Movement (Arrow Keys)")]
     //World Space Movement 
-
     //[Up] Arrow
     public KeyCode MoveForwardWorld;
     //[Down] Arrow
@@ -26,16 +28,15 @@ public class PlayerController : Controller
     //[Right] Arrow
     public KeyCode MoveRightWorld;
 
-
+    [Header("Turbo Speed")]
     //Speed Change
-
     //Left Shift Button
     public KeyCode TurboSpeedL;
     
     //Right Shift Button
-
     public KeyCode TurboSpeedR;
-
+   
+    [Header("Combat")]
     // Shoot Mechanics 
     public KeyCode shootKey;
 

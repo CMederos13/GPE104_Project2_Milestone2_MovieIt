@@ -37,23 +37,35 @@ public class SettingMenu : MonoBehaviour
         // Escape opens and closes the setting menu
         if (Keyboard.current[Key.Escape].wasPressedThisFrame)
         {
-            settingPanel.SetActive(!settingPanel.activeSelf);
-
-            // Pause the Game when the menu is open, resumes back when closed
-
             if (settingPanel.activeSelf)
             {
+                CloseSetting();
+            }
+            else if (GameManager.instance.gameplay.activeSelf)
+            {
+                //only pause with escape while the game is being played
+                settingPanel.SetActive(true);
                 Time.timeScale = 0;
             }
-            else
-            {
-                Time.timeScale = 1;
-            }
-            //Had to add this so it can save Volume settings to disk when the menu closes
-            PlayerPrefs.Save();
+
         }
 
 
+    }
+
+    public void CloseSetting()
+    {
+        PlayerPrefs.Save();
+
+        if (GameManager.instance.gameplay.activeSelf)
+        {
+            settingPanel.SetActive(false);
+            Time.timeScale = 1; 
+        }
+        else
+        {
+            GameManager.instance.DoShowMainMenu();
+        }
     }
     private void OnApplicationQuit()
     {
