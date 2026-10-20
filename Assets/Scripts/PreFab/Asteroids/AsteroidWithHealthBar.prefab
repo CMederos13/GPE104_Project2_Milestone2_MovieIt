@@ -195,6 +195,8 @@ GameObject:
   - component: {fileID: 2395452689832468031}
   - component: {fileID: 8543889323126769264}
   - component: {fileID: 7787897513145108894}
+  - component: {fileID: 7242817339217415185}
+  - component: {fileID: -3026353073380046765}
   m_Layer: 6
   m_Name: AsteroidWithHealthBar
   m_TagString: Untagged
@@ -525,3 +527,28 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7242817339217415185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7303450137383286565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c34e2756ce0454bbfcd32ce7d96631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AsteroidMovement
+  moveSpeed: 1.5
+--- !u!114 &-3026353073380046765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7303450137383286565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab09d8277c325c48808e256ca737c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScreenWarp

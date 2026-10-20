@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 1168476030766954650}
   - component: {fileID: -1465348504600565557}
   - component: {fileID: 472989505192468494}
+  - component: {fileID: 4793673422854656735}
   m_Layer: 0
   m_Name: StarShipPawn
   m_TagString: Untagged
@@ -142,16 +143,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6182eb313d326244881a1d8712f66f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StarShipPawn
-  minX: -5
-  maxX: 5
-  minY: -5
-  maxY: 5
   tf: {fileID: 0}
-  worldSpeed: 2
   normalSpeed: 5
-  turboSpeed: 10
   normalRotateSpeed: 360
+  turboSpeed: 10
   turboRotateSpeed: 720
+  worldSpeed: 2
 --- !u!114 &3648414869277072417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,3 +368,15 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7567064362659971391}
   m_Enabled: 1
+--- !u!114 &4793673422854656735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7567064362659971391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab09d8277c325c48808e256ca737c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScreenWarp

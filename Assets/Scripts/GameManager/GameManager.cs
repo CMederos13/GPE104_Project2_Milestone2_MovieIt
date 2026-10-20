@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    
+    
 
     [Header("Player Lives")]
     public GameObject playerShipPreFab; //StarShipPawn prefab, spawn at the world origin
@@ -30,7 +32,7 @@ public class GameManager : MonoBehaviour
     public float maxX = 9;
     public float minY = -5;
     public float maxY = 5;
-
+    public float warpMargin = 1f; // how far past the bounds objects travel before warping
 
 
 
