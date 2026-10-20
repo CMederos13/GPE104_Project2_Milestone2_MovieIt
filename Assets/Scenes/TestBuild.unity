@@ -2764,7 +2764,7 @@ MonoBehaviour:
   playerHealthBar: {fileID: 837468413}
   playerDamageNumberParent: {fileID: 1980620600}
   asteroidPreFab: {fileID: 7303450137383286565, guid: 2d42ba7b1456b2941a3507b3d0f43833, type: 3}
-  ufoPreFab: {fileID: 0}
+  ufoPreFab: {fileID: 7303450137383286565, guid: c4fafd2c4b813bd42a87db0a19427703, type: 3}
   enemyCount: 5
   ufoChancePercent: 20
   safeSpawnDistance: 3
@@ -6278,7 +6278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1793446107
 RectTransform:
   m_ObjectHideFlags: 0
