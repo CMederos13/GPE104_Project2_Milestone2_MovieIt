@@ -400,7 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0063de8c998fb14898cba991b649c38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  maxHealth: 100
+  maxHealth: 10
   currentHealth: 100
   healthBar: {fileID: 4369416043086502899}
   damageNumberPrefab: {fileID: 7541231525589628028, guid: e9ee14f29bc80ea4aae1f512fb6b512d, type: 3}
@@ -418,6 +418,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeathDestroyManager
   scoreValue: 10
+  splitPreFab: {fileID: 7303450137383286565, guid: 1d3a149d225a28e43a80573635628885, type: 3}
+  splitCount: 2
 --- !u!114 &8543889323126769264
 MonoBehaviour:
   m_ObjectHideFlags: 0

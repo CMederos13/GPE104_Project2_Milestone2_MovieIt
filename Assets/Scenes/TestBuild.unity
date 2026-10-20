@@ -2772,6 +2772,7 @@ MonoBehaviour:
   maxX: 6.6
   minY: -1.2
   maxY: 4
+  warpMargin: 1
   playerController: {fileID: 1436334927}
   obstacleList: []
   score: 0
@@ -7766,7 +7767,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 635, y: -30}
+  m_AnchoredPosition: {x: 806, y: -30}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1944057959
