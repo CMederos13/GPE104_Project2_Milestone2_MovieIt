@@ -1,10 +1,10 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+
 
 public class Obstacle : MonoBehaviour
 {
    
-    void Start()
+    void Awake()
     {
         GameManager.instance.obstacleList.Add(this);
 

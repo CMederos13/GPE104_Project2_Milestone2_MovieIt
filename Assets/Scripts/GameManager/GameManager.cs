@@ -18,6 +18,22 @@ public class GameManager : MonoBehaviour
     public Image playerHealthBar; // Health Bar fill image the ship updates
     public Transform playerDamageNumberParent; // Where the ghost damage numbers pop up
 
+    [Header("Enemy Spawning")]
+    public GameObject asteroidPreFab; // Asteroid spawn at the start
+    public GameObject ufoPreFab; // UFO enemy 
+    public int enemyCount = 5; // Designer set how many enemies spawn
+    public float ufoChancePercent = 20; // Chances of (0-100) that each enemy is a UFO Obstacle 
+    public float safeSpawnDistance = 3; // keeps enemies from spawning on top of player
+
+    [Header("Screen Bounds")]
+    public float minX = -9;
+    public float maxX = 9;
+    public float minY = -5;
+    public float maxY = 5;
+
+
+
+
     [Header("Gameplay")]
     public PlayerController playerController;
     public List<Obstacle> obstacleList;
@@ -39,7 +55,7 @@ public class GameManager : MonoBehaviour
 
     public AudioClip asteroidHumSound;
 
-    public AudioClip deathSound; //Explosionn when the ship or an enemy is destroyed
+    public AudioClip deathSound; //Explosion when the ship or an enemy is destroyed
 
     [Header("Audio Sources")]
     public AudioSource sfxPlayer;
@@ -91,7 +107,7 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        
+
         //checking for win/lose while game is running
         if (isGameRunning)
         {
@@ -112,7 +128,7 @@ public class GameManager : MonoBehaviour
         }
         if (livesText != null)
         {
-            livesText.text = "Lives: " + currentLives; 
+            livesText.text = "Lives: " + currentLives;
         }
     }
 
@@ -150,12 +166,43 @@ public class GameManager : MonoBehaviour
         shipHealth.healthBar = playerHealthBar;
         shipHealth.damageNumberParent = playerDamageNumberParent;
 
+
         // The new ship's audio listener takes over from the camera 
         cameraListener.enabled = false;
 
     }
+    private void SpawnEnemies()
+    {
+        // Clears old enemies and spawns new ones at random positions
+        for (int i = obstacleList.Count - 1; i >= 0; i--)
+        {
+            Destroy(obstacleList[i].gameObject);
+        }
+        obstacleList.Clear();
+
+        for (int i = 0; i < enemyCount; i++)
+        {
+            // Picks a random spot and chooses again if obstacle is to close
+          Vector3 spawnPosition = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), 0);
+          while (Vector3.Distance(spawnPosition, Vector3.zero) < safeSpawnDistance)
+            {
+                spawnPosition = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), 0);
+            }
+            // Roll the UFO chance; Spawns an Asteroid if there no UFO or the roll fails 
+            GameObject prefabToSpawn = asteroidPreFab;
+
+            if (ufoPreFab != null && Random.Range(0f, 100f) < ufoChancePercent)
+            {
+                prefabToSpawn = ufoPreFab;
+            }
+
+            Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity, gameplay.transform);
+        }
+    }
+                
 
     //Turns screen and gameplay off, this on what it needs when the bottons clicked
+    
     private void HideAllScreens()
     {
         mainMenuScreen.SetActive(false);
@@ -197,6 +244,7 @@ public class GameManager : MonoBehaviour
     {
         HideAllScreens();
         gameplay.SetActive(true);
+        SpawnEnemies();
         gameplayUI.SetActive(true);
         
         if (!musicPlayer.isPlaying)
