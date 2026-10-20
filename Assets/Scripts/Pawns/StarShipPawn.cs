@@ -1,24 +1,27 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class StarShipPawn : Pawn
 {
-    public float minX;
-    public float maxX;
-    public float minY;
-    public float maxY;
+    [Header("Components")]
     public Transform tf;
-
-    public float worldSpeed = 2f;
-
-    public float normalSpeed;
-    public float turboSpeed;
-
-    public float normalRotateSpeed;
-    public float turboRotateSpeed;
-
     private Shooter sh;
+    
+
+    [Header("Local Movement Speed")]
+    public float normalSpeed; // W/S speed
+    public float normalRotateSpeed; // A/D rotation speed
+
+
+    [Header("Turbo Speeds (Shift)")]
+   
+    public float turboSpeed;
+    public float turboRotateSpeed; 
+
+    [Header("World Movement (Arrow Keys)")]
+    public float worldSpeed = 2f; // how far each arrow key press jumps the ship
+    
+
+  
     
 
     public override void MoveForwardLocal()
@@ -40,24 +43,28 @@ public class StarShipPawn : Pawn
     {
         tf.Rotate(0, 0, normalRotateSpeed * Time.deltaTime);
     }
-    //World Section
+    //World Section: Arrow keys jump ship in a world directions
     public override void MoveForwardWorld()
     {
-        tf.position = tf.position + Vector3.up;
+        tf.position = tf.position + Vector3.up * worldSpeed;
+        PlayTeleportSound();
     }
 
     public override void MoveLeftWorld()
     {
-        tf.position = tf.position + -Vector3.right;
+        tf.position = tf.position + -Vector3.right * worldSpeed;
+        PlayTeleportSound();
     }
 
     public override void MoveRightWorld()
     {
-        tf.position = tf.position + Vector3.right; 
+        tf.position = tf.position + Vector3.right * worldSpeed;
+        PlayTeleportSound();
     }
     public override void MoveBackwardWorld()
     {
-        tf.position = tf.position + -Vector3.up;
+        tf.position = tf.position + -Vector3.up * worldSpeed;
+        PlayTeleportSound();
     }
 
     //Turbo Section
@@ -85,7 +92,7 @@ public class StarShipPawn : Pawn
 
     public override void MakeDecsisions()
     {
-        throw new System.NotImplementedException();
+        //Controller only does make decisions
     }
 
     public override void Shoot()
@@ -97,9 +104,20 @@ public class StarShipPawn : Pawn
         }
 
     }
+
+    // Teleports to a random spot inside the gameManager's screen bound 
     public override void Teleport()
     {
-        tf.position = new Vector3(Random.Range(minX,maxX), Random.Range(minY, maxY));
+        float x = Random.Range(GameManager.instance.minX, GameManager.instance.maxX);
+        float y = Random.Range(GameManager.instance.minY, GameManager.instance.maxY);
+        tf.position = new Vector3(x,y,0);
+        PlayTeleportSound();
+    }
+
+    //plays teleport sound through SFX Player
+    private void PlayTeleportSound()
+    {
+        GameManager.instance.sfxPlayer.PlayOneShot(GameManager.instance.teleportSound);
     }
 
     
