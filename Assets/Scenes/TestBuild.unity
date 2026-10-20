@@ -2763,6 +2763,15 @@ MonoBehaviour:
   livesText: {fileID: 1940904378}
   playerHealthBar: {fileID: 837468413}
   playerDamageNumberParent: {fileID: 1980620600}
+  asteroidPreFab: {fileID: 7303450137383286565, guid: 2d42ba7b1456b2941a3507b3d0f43833, type: 3}
+  ufoPreFab: {fileID: 0}
+  enemyCount: 5
+  ufoChancePercent: 20
+  safeSpawnDistance: 3
+  minX: -6.8
+  maxX: 6.6
+  minY: -1.2
+  maxY: 4
   playerController: {fileID: 1436334927}
   obstacleList: []
   score: 0
