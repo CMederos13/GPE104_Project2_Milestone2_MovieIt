@@ -55,7 +55,7 @@ public class GameManager : MonoBehaviour
 
     public AudioClip takingDamageSound;
 
-    public AudioClip asteroidHumSound;
+    public AudioClip ufoHumSound;
 
     public AudioClip deathSound; //Explosion when the ship or an enemy is destroyed
 

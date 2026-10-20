@@ -8,11 +8,11 @@ public class Obstacle : MonoBehaviour
     {
         GameManager.instance.obstacleList.Add(this);
 
-        //Get this Asteroid's Audio Source and start It's 3D Hum
+        //Get this enemy's Audio Source and start Its 3D Hum
         AudioSource humSource = GetComponent<AudioSource>();
         if(humSource != null)
         {
-            humSource.clip = GameManager.instance.asteroidHumSound;
+            humSource.clip = GameManager.instance.ufoHumSound;
             humSource.Play();
         }
     }

@@ -2782,7 +2782,7 @@ MonoBehaviour:
   gameOverSound: {fileID: 8300000, guid: 8b36b36033cf6f441a722df65cf67a37, type: 3}
   backgroundMusic: {fileID: 8300000, guid: 09ad669d7665c7c45b996a87f2b1272d, type: 3}
   takingDamageSound: {fileID: 8300000, guid: d8bf6f274399a5b40924e35fcf884429, type: 3}
-  asteroidHumSound: {fileID: 8300000, guid: c8704b44f97c17e4f8607336665f3bb9, type: 3}
+  ufoHumSound: {fileID: 8300000, guid: c8704b44f97c17e4f8607336665f3bb9, type: 3}
   deathSound: {fileID: 8300000, guid: 9634e70b1da90674e86770b9bc16ea42, type: 3}
   sfxPlayer: {fileID: 1505942911}
   musicPlayer: {fileID: 1795178499}
