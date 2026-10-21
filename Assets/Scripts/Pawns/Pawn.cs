@@ -1,10 +1,8 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
+// Base class for anything a controller can move (Player Ship, UFO)
 public abstract class Pawn : MonoBehaviour
 {
-  
-    
    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public abstract void Start();
@@ -13,13 +11,13 @@ public abstract class Pawn : MonoBehaviour
     public abstract void Update();
 
 
-
+    //Jumps to a random spot 
     public abstract void Teleport();
 
 
-    //Normal Speed Variant Here
     public abstract void MakeDecsisions();
 
+    //Normal Speed Variant Here 
     public abstract void MoveForwardLocal();
 
     public abstract void MoveBackwardLocal();
@@ -46,7 +44,8 @@ public abstract class Pawn : MonoBehaviour
 
     public abstract void MoveRightWorld();
 
-    public abstract void Shoot();
+    //Fires the pawn's weapon 
+    public abstract void Shoot(); 
    
       
 }

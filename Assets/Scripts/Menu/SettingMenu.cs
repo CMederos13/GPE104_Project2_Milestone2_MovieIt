@@ -3,22 +3,25 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
-
+// Settings menu; Volume sliders, saving volume, and pausing  with Escape
 public class SettingMenu : MonoBehaviour
 {
-    public AudioMixer mainAudioMixer;
+    [Header("Audio")]
+    public AudioMixer mainAudioMixer; // Mixer with exposed MainVolume,SFX Volume, and MusicVolume
 
+    [Header("Volume Sliders")]
     public Slider mainVolumeSlider;
 
     public Slider sfxVolumeSlider;
 
     public Slider musicVolumeSlider;
+    [Header("Setting Screen")]
 
     public GameObject settingPanel;
     void Start()
     {
-       
-        // Loads Saved Slider Values (Default to 1 = Max Volume if nothing saved
+
+        // Loads Saved Slider Values (Default to 1 = Max Volume if nothing saved)
         mainVolumeSlider.value = PlayerPrefs.GetFloat("MainVolume", 1f);
         sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1f);
         musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1f);
@@ -53,6 +56,7 @@ public class SettingMenu : MonoBehaviour
 
     }
 
+    // Closes settings: resumes the game if playing, otherwise goes back to the main menu
     public void CloseSetting()
     {
         PlayerPrefs.Save();
@@ -60,21 +64,25 @@ public class SettingMenu : MonoBehaviour
         if (GameManager.instance.gameplay.activeSelf)
         {
             settingPanel.SetActive(false);
-            Time.timeScale = 1; 
+            Time.timeScale = 1;
         }
         else
         {
             GameManager.instance.DoShowMainMenu();
         }
     }
+
+    //Saves the volume settings when the game is closed 
     private void OnApplicationQuit()
     {
         PlayerPrefs.Save();
     }
+
+    //Called by the sliders; sets the mixer volume and saves it 
     public void OnMusicVolumeChange()
     {
         mainAudioMixer.SetFloat("MusicVolume", SliderToDecibels(musicVolumeSlider.value));
-        PlayerPrefs.SetFloat("MusicVolume",musicVolumeSlider.value);
+        PlayerPrefs.SetFloat("MusicVolume", musicVolumeSlider.value);
 
     }
 

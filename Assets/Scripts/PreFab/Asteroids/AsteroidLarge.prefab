@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 7242817339217415185}
   - component: {fileID: -3026353073380046765}
   m_Layer: 6
-  m_Name: AsteroidWithHealthBar
+  m_Name: AsteroidLarge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damage
   damageAmount: 10
-  isInstaKill: 0
+  isInstaKill: 1
 --- !u!114 &4177747147698903329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0063de8c998fb14898cba991b649c38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  maxHealth: 10
+  maxHealth: 100
   currentHealth: 100
   healthBar: {fileID: 4369416043086502899}
   damageNumberPrefab: {fileID: 7541231525589628028, guid: e9ee14f29bc80ea4aae1f512fb6b512d, type: 3}

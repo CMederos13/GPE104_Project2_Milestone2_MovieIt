@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damage
   damageAmount: 10
-  isInstaKill: 0
+  isInstaKill: 1
 --- !u!114 &4177747147698903329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,7 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec72dcdd7d5a798448e49efb30b62700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeathDestroyManager
-  scoreValue: 10
+  scoreValue: 5
   splitPreFab: {fileID: 7303450137383286565, guid: cc6d9f70feb43ac4a9593ce3daac708b, type: 3}
   splitCount: 2
 --- !u!114 &8543889323126769264

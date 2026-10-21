@@ -1,9 +1,10 @@
 using UnityEngine;
 
+// Handles the player's ship dying; explosion sound, camera takes over
 public class DeathPawn : Death
 {
 
-    private Controller controller;
+   
     public override void Die()
     {
         // Play the explosion sound through the GameManager's SFX player
@@ -18,18 +19,16 @@ public class DeathPawn : Death
             shipListener.enabled = false;
         }
 
-        GameManager.instance.cameraListener.enabled = true; 
+        GameManager.instance.cameraListener.enabled = true;
 
-        if (controller != null)
-        {
-            controller.pawn = null;
-        }
+        //Destroying the ship lets the GameManager see it's gone and respawn or end the game
         Destroy(gameObject);
+        
     }
 
     public override void Start()
     {
-        controller = GetComponent<Controller>();
+       
     }
 
     public override void Update()

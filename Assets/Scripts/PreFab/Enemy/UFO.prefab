@@ -191,6 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd800711ae5c27b4a830a3ee9dcbc694, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthBarFollow
+  offset: {x: 0, y: 0.385, z: 0}
 --- !u!1 &7303450137383286565
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,7 +398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damage
   damageAmount: 10
-  isInstaKill: 0
+  isInstaKill: 1
 --- !u!114 &4177747147698903329
 MonoBehaviour:
   m_ObjectHideFlags: 0
