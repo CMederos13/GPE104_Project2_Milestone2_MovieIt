@@ -1,6 +1,6 @@
 using UnityEngine;
 
-//Wraps this object to the opposite side when it leave the GameManager's screen bounds
+//Wraps this object to the opposite side when it leaves the GameManager's screen bounds
 public class ScreenWarp : MonoBehaviour
 {
 
@@ -33,6 +33,7 @@ public class ScreenWarp : MonoBehaviour
             position.y = top;
         }
 
+        // Apply the new position
         transform.position = position;
 
     }

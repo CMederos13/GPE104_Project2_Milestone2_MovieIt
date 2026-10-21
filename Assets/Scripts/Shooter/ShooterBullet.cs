@@ -1,12 +1,13 @@
 using UnityEngine;
 
+//Shoots bullets from a spawn pont (used by the player's ship)
 public class ShooterBullet : Shooter
 {
-    public Transform bulletSpawnPoint;
+    [Header("Bullet Settings")]
+    public Transform bulletSpawnPoint; // Where the bullet spawns (Ship's nose)
+    public GameObject bulletPrefab; // the bullet that gets fired 
 
-    public GameObject bulletPrefab;
-
-
+    // Creates a bullet at the spawn point, facing the same direction as the nose of the ship
     public override void Shoot()
     {
         if (bulletSpawnPoint != null && bulletPrefab != null)
@@ -20,6 +21,7 @@ public class ShooterBullet : Shooter
         }
     }
     
+    // Required by shooter; nothing to set up or update every frame
     public override void Start()
     {
         

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Handles an enemy dying: splits into smaller pieces, adds score, plays the explosion
 public class DeathDestroyManager : Death
 
 {
@@ -11,6 +12,7 @@ public class DeathDestroyManager : Death
     public GameObject splitPreFab; // smaller asteroid to spawn on death (Leave empty for no split wanted)
     public int splitCount = 2; //Designer can set up how many pieces spawn
 
+    //Called when health reaches 0
     public override void Die()
     {
         // Spawn the smaller pieces FIRST so the obstacle list never hits 0 between frames
@@ -35,15 +37,18 @@ public class DeathDestroyManager : Death
             GameManager.instance.sfxPlayer.PlayOneShot(GameManager.instance.deathSound);
         
         }
-
+        
+        // Removes the enemy from the scene
         Destroy(gameObject);
     }
 
+    // Finds this enemy's Obstacle so it can be removed from the list on death
     public override void Start()
     {
         ObstacleToRemoveOnDeath = GetComponent<Obstacle>();
     }
 
+    // Required by Death; nothing to do every frame
     public override void Update()
     {
         
