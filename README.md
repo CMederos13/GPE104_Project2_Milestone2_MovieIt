@@ -19,6 +19,8 @@
 [https://youtu.be/9hViJV_iRes](https://youtu.be/9hViJV_iRes)
 **Milestone 6** 
 [https://youtu.be/S7ujrqDcyJY](https://youtu.be/S7ujrqDcyJY)
+**FINAL ULTIMATE ASTEROID TROOPER UAT PROJECT**
+[ https://youtu.be/61MYqZAkkl8]( https://youtu.be/61MYqZAkkl8)
 
                                                                             ** Overview **
 
@@ -79,6 +81,9 @@
 Added a Pause Menu: Hitting escape now opens and closes the setting menu and pauses the game using 'Time.timeScale'
 Added a Quit Game Button: Move the quit game script function into the setting's menu 
 
+// 26. Check commit for all progress on final project 
+
+// 27. game completed
 
 // **Credits**
 SFX Created with JSFXR: https://pro.sfxr.me
